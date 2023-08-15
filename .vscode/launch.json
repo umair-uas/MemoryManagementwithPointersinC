@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Executable",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/${fileBasenameNoExtension}", // Use the current file's basename as the executable name
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "text": "set output-radix hex", // Set radix to hex
+                    "ignoreFailures": true
+                }
+
+            ],
+            "preLaunchTask": "Build", // Optional: Specify the build task to run before debugging
+            "miDebuggerPath": "/usr/bin/gdb" // Optional: Specify the path to gdb executable
+        }
+    ]
+}
